@@ -20,7 +20,7 @@ const API_MSRSTN = "http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getMsrst
 
 const CONSUMER_KEY = "d5f63c93777a4344865e";
 const CONSUMER_SECRET = "c3171ce29ca745e69c0a";
-const SERVICE_KEY = "mPrY%2FpEd3gEOzKvkkqyY50qAgTZL2Q27LpXMDtKbavSWj70vGMlzIzeRL%2B2KP67hRdgoJGBKowbxTZNKXwt8vw%3D%3D";
+const SERVICE_KEY = "DKxyXxGvAM3ZVanzQNW3RLxcxJwOAfzYxzIAEG1WkomBEqqAD9J%2BrBhW%2FLCdxJIAlq0lej6GHMQr8%2BF5Q9AdOg%3D%3D";
 const DATA_TYPE = 'daily';
 
 const WGS84 = 4326; //경위도
@@ -77,39 +77,6 @@ export default class App2 extends Component {
       SplashScreen.hide();
     }, 5000);
 
-    // Geolocation.getCurrentPosition(
-    //   (position) => {
-    //     this.setState({
-    //       latitude: position.coords.latitude,
-    //       longitude: position.coords.longitude,
-    //       error: null,
-    //       regionName: regionNamereal,
-    //       date: datereal,
-    //       pm10_Grade: realpm10_Grade,
-    //       pm10_Value: realpm10_Value,
-    //       pm25_Grade: realpm25_Grade,
-    //       pm25_Value: realpm25_Value,
-    //       khai_Grade: realkhai_Grade,
-    //       khai_Value: realkhai_Value,
-    //       o3_Grade: realo3_Grade,
-    //       o3_Value: realo3_Value,
-    //       co_Grade: realco_Grade,
-    //       co_Value: realco_Value,
-    //       no2_Grade: realno2_Grade,
-    //       no2_Value: realno2_Value,
-    //       so2_Grade: realso2_Grade,
-    //       so2_Value: realso2_Value,
-    //     });
-    //     console.log('dd' + this.state.latitude);
-    //     console.log('ddddddddddddddd' + this.state.regionName);
-    //   },
-    //   (error) => this.setState({ error: error.message }),
-    //   { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 },
-    // );
-    
-  }
- 
-  gkatndlqslek() {
     Geolocation.getCurrentPosition(
       (position) => {
         this.setState({
@@ -139,6 +106,7 @@ export default class App2 extends Component {
       (error) => this.setState({ error: error.message }),
       { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 },
     );
+    
   }
 
 
