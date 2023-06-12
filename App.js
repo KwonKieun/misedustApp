@@ -71,6 +71,7 @@ export default class App2 extends Component {
       open: false,
     };
   }
+
   componentDidMount() {
 
     setTimeout(() => {
@@ -100,8 +101,8 @@ export default class App2 extends Component {
           so2_Grade: realso2_Grade,
           so2_Value: realso2_Value,
         });
-        console.log('dd' + this.state.latitude);
-        console.log('ddddddddddddddd' + this.state.regionName);
+        //console.log('dd' + this.state.latitude);
+        //console.log('ff' + this.state.regionName);
       },
       (error) => this.setState({ error: error.message }),
       { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 },
@@ -111,7 +112,6 @@ export default class App2 extends Component {
 
 
   render() {
-    //console.log("rererre");
     return (
       <View style={{ flex: 1, backgroundColor: 'black', }}>
         <View style={{ flex: 3.5, }}>
@@ -133,9 +133,6 @@ export default class App2 extends Component {
             </View>
             <Text style={styles.timeTxt}>{this.state.date}</Text>
             <View style={{ flexGrow: 1, alignItems: 'center', justifyContent: 'center' }}>
-              {/* <Text style={{color: 'white'}}>Latitude: {this.state.latitude}</Text> */}
-              {/* <Text>Longitude: {this.state.longitude}</Text> */}
-              {/* {this.state.error ? <Text>Error: {this.state.error}</Text> : null} */}
               <Text style={{color: 'white'}}>{fetchAuth(Number(this.state.longitude), Number(this.state.latitude))}</Text>
             </View>
             <View style={{justifyContent: 'center', alignItems: 'center', }}>
@@ -220,8 +217,8 @@ export default class App2 extends Component {
 function fetchAuth(longitude, latitude) {
   let url = `${API_AUTH}?consumer_key=${CONSUMER_KEY}&consumer_secret=${CONSUMER_SECRET}`;
   console.log(url);
-  console.log(longitude);
-  console.log(latitude);
+  //console.log(longitude);
+  //console.log(latitude);
 
   fetch(url)
     .then(response => response.json())
@@ -252,13 +249,10 @@ function fetchCrdTms(accessToken, longitude, latitude) {
       console.log("error");
       console.log(error);
     })
-  //return data.result.posX;
 }
 
 async function getNearbyMsrstnList(tmX, tmY) {
-  console.log(tmX);
   let url = `${API_NMT}?serviceKey=${SERVICE_KEY}&returnType=json&tmX=${tmX}&tmY=${tmY}`;
-  //let url = `${API_NMT}?tmX=${tmX}&tmY=${tmY}&pageNo=1&numOfRows=10&ServiceKey=${SERVICE_KEY}&returnType=json`;
   console.log(url);
   
 
